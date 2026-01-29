@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022", "DOM"],
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,  // Corregí el nombre
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "@playwright/test"],
+  // 👇 ESTA ES LA PARTE IMPORTANTE
+    "baseUrl": ".",  // Raíz del proyecto
+    "paths": {
+      "@/*": ["src/*"],                    // src/
+      "@tests/*": ["tests/*"],         // src/tests/
+      "@pages/*": ["src/pages/*"],         // src/pages/
+      "@models/*": ["src/models/*"],       // src/models/
+      "@utils/*": ["src/utils/*"],         // src/utils/
+      "@config/*": ["src/config/*"],       // src/config/
+      "@support/*": ["src/support/*"],     // src/support/
+      "@fixtures/*": ["src/fixtures/*"],    // src/fixtures/
+      "@constants/*": ["src/pages/locators/*"],         // src/constants/
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "*.ts",
+    "tests/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "playwright-report",
+    "test-results"
+  ]
+}
