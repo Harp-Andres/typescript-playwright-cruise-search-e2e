@@ -2,10 +2,26 @@
   "name": "prueba-buscar-cruseros",
   "version": "1.0.0",
   "scripts": {
-    "test": "npx playwright test",
-    "report": "npx playwright show-report"
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:typescript": "npx playwright test --config=playwright.config.ts",
+    "type-check": "tsc --noEmit",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts"
   },
   "devDependencies": {
-    "@playwright/test": "^1.43.0"
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^25.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^12.6.0",
+    "playwright-cucumber": "^1.0.15",
+    "xlsx": "^0.18.5"
   }
 }

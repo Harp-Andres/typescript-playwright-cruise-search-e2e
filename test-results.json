@@ -1,0 +1,492 @@
+{
+  "config": {
+    "configFile": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\playwright.config.ts",
+    "rootDir": "E:/UnidadPrincipal/Documentos/ProyectosAutomatizacionModerna/Buscar_Cruceros/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/UnidadPrincipal/Documentos/ProyectosAutomatizacionModerna/Buscar_Cruceros/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "E:/UnidadPrincipal/Documentos/ProyectosAutomatizacionModerna/Buscar_Cruceros/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/UnidadPrincipal/Documentos/ProyectosAutomatizacionModerna/Buscar_Cruceros/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "E:/UnidadPrincipal/Documentos/ProyectosAutomatizacionModerna/Buscar_Cruceros/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.0",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "cruises-search.spec.ts",
+      "file": "cruises-search.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Busqueda y verificacion de cruceros",
+          "file": "cruises-search.spec.ts",
+          "line": 15,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Busqueda de crucero: Caribe en Nov. 2025 (Miami, Azamara)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 27279,
+                      "error": {
+                        "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n\n    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:28:21)\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:9\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:7",
+                        "location": {
+                          "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                          "column": 21,
+                          "line": 28
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:28\n\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcerrarCalendario\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                            "column": 21,
+                            "line": 28
+                          },
+                          "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:28\n\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcerrarCalendario\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:28:21)\u001b[22m\n\u001b[2m    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:9\u001b[22m\n\u001b[2m    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Realizar busqueda en la pagina",
+                          "duration": 20172,
+                          "error": {
+                            "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n",
+                            "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n\n    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:28:21)\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:9\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:7",
+                            "location": {
+                              "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                              "column": 21,
+                              "line": 28
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:28\n\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcerrarCalendario\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-01-29T22:44:02.463Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--c4128--en-Nov-2025-Miami-Azamara--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--c4128--en-Nov-2025-Miami-Azamara--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--c4128--en-Nov-2025-Miami-Azamara--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--c4128--en-Nov-2025-Miami-Azamara--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                        "column": 21,
+                        "line": 28
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7e163e59019dd0b71628-44ead84435a665a8a6d1",
+              "file": "cruises-search.spec.ts",
+              "line": 17,
+              "column": 9
+            },
+            {
+              "title": "Busqueda de crucero: Ameríca en Nov. 2025 (Barcelona, Royal Caribbean)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 28219,
+                      "error": {
+                        "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Ameríca\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Ameríca\"]')\u001b[22m\n\n    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:28:21)\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:9\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:7",
+                        "location": {
+                          "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                          "column": 21,
+                          "line": 28
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:28\n\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcerrarCalendario\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                            "column": 21,
+                            "line": 28
+                          },
+                          "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Ameríca\"]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:28\n\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcerrarCalendario\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:28:21)\u001b[22m\n\u001b[2m    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:9\u001b[22m\n\u001b[2m    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Realizar busqueda en la pagina",
+                          "duration": 19023,
+                          "error": {
+                            "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Ameríca\"]')\u001b[22m\n",
+                            "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Ameríca\"]')\u001b[22m\n\n    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:28:21)\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:9\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:7",
+                            "location": {
+                              "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                              "column": 21,
+                              "line": 28
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:28\n\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcerrarCalendario\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-01-29T22:44:02.545Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--1d6cf--Barcelona-Royal-Caribbean--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--1d6cf--Barcelona-Royal-Caribbean--chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--1d6cf--Barcelona-Royal-Caribbean--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--1d6cf--Barcelona-Royal-Caribbean--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                        "column": 21,
+                        "line": 28
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7e163e59019dd0b71628-609470b49ab7b1101065",
+              "file": "cruises-search.spec.ts",
+              "line": 17,
+              "column": 9
+            },
+            {
+              "title": "Busqueda de crucero: Caribe en Nov. 2025 (Miami, Azamara)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 33609,
+                      "error": {
+                        "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n\n    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:28:21)\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:9\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:7",
+                        "location": {
+                          "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                          "column": 21,
+                          "line": 28
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:28\n\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcerrarCalendario\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                            "column": 21,
+                            "line": 28
+                          },
+                          "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:28\n\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcerrarCalendario\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:28:21)\u001b[22m\n\u001b[2m    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:9\u001b[22m\n\u001b[2m    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:7\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Realizar busqueda en la pagina",
+                          "duration": 20526,
+                          "error": {
+                            "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n",
+                            "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[data-nom=\"Caribe\"]')\u001b[22m\n\n    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:28:21)\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:9\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:7",
+                            "location": {
+                              "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                              "column": 21,
+                              "line": 28
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:28\n\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcerrarCalendario\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-01-29T22:44:36.554Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--c4128--en-Nov-2025-Miami-Azamara--firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--c4128--en-Nov-2025-Miami-Azamara--firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--c4128--en-Nov-2025-Miami-Azamara--firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--c4128--en-Nov-2025-Miami-Azamara--firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                        "column": 21,
+                        "line": 28
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7e163e59019dd0b71628-d01a6dd63822004c1c78",
+              "file": "cruises-search.spec.ts",
+              "line": 17,
+              "column": 9
+            },
+            {
+              "title": "Busqueda de crucero: Ameríca en Nov. 2025 (Barcelona, Royal Caribbean)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 32154,
+                      "error": {
+                        "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//button[@class=\\'MuiButtonBase-root MuiCardActionArea-root mui-1bvkg4q\\']//p[contains(text(),\\'destinos\\')]')\u001b[22m\n",
+                        "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//button[@class=\\'MuiButtonBase-root MuiCardActionArea-root mui-1bvkg4q\\']//p[contains(text(),\\'destinos\\')]')\u001b[22m\n\n    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:27:21)\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:32\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:18",
+                        "location": {
+                          "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                          "column": 21,
+                          "line": 27
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:27\n\n\u001b[0m \u001b[90m 25 |\u001b[39m   \u001b[36masync\u001b[39m search(data\u001b[33m:\u001b[39m \u001b[33mCruiseSearchData\u001b[39m)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                            "column": 21,
+                            "line": 27
+                          },
+                          "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//button[@class=\\'MuiButtonBase-root MuiCardActionArea-root mui-1bvkg4q\\']//p[contains(text(),\\'destinos\\')]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:27\n\n\u001b[0m \u001b[90m 25 |\u001b[39m   \u001b[36masync\u001b[39m search(data\u001b[33m:\u001b[39m \u001b[33mCruiseSearchData\u001b[39m)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:27:21)\u001b[22m\n\u001b[2m    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:32\u001b[22m\n\u001b[2m    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:18\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Realizar busqueda en la pagina",
+                          "duration": 13747,
+                          "error": {
+                            "message": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//button[@class=\\'MuiButtonBase-root MuiCardActionArea-root mui-1bvkg4q\\']//p[contains(text(),\\'destinos\\')]')\u001b[22m\n",
+                            "stack": "TimeoutError: page.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('//button[@class=\\'MuiButtonBase-root MuiCardActionArea-root mui-1bvkg4q\\']//p[contains(text(),\\'destinos\\')]')\u001b[22m\n\n    at CruiseSearchPage.search (E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts:27:21)\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:24:32\n    at E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\tests\\cruises-search.spec.ts:23:18",
+                            "location": {
+                              "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                              "column": 21,
+                              "line": 27
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\src\\flows\\cruise-search.flow.ts:27\n\n\u001b[0m \u001b[90m 25 |\u001b[39m   \u001b[36masync\u001b[39m search(data\u001b[33m:\u001b[39m \u001b[33mCruiseSearchData\u001b[39m)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\n \u001b[90m 26 |\u001b[39m     \u001b[90m// Usando localizadores estáticos y dinámicos separados\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODOS_DESTINOS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mdestino(data\u001b[33m.\u001b[39mdestino))\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(\u001b[33mCRUISE_SEARCH_STATIC_LOCATORS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTODAS_FECHAS\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(cruiseSearchDynamicLocators\u001b[33m.\u001b[39mfecha(data\u001b[33m.\u001b[39mfechaNom\u001b[33m,\u001b[39m data\u001b[33m.\u001b[39mfechaId))\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-01-29T22:44:36.569Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--1d6cf--Barcelona-Royal-Caribbean--firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--1d6cf--Barcelona-Royal-Caribbean--firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--1d6cf--Barcelona-Royal-Caribbean--firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\test-results\\cruises-search-Busqueda-y--1d6cf--Barcelona-Royal-Caribbean--firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\UnidadPrincipal\\Documentos\\ProyectosAutomatizacionModerna\\Buscar_Cruceros\\src\\flows\\cruise-search.flow.ts",
+                        "column": 21,
+                        "line": 27
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7e163e59019dd0b71628-ad47f29bcda69e15558c",
+              "file": "cruises-search.spec.ts",
+              "line": 17,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-01-29T22:43:58.904Z",
+    "duration": 79399.79999999999,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}
