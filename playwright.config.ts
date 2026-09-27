@@ -1,10 +1,13 @@
 import { defineConfig, devices } from '@playwright/test';
+import { getCruiseEnv } from './src/config/env';
+
+const env = getCruiseEnv();
 
 export default defineConfig({
   testDir: './tests',
 
   // Timeouts
-  timeout: 30000,
+  timeout: env.TIMEOUT_MS,
   expect: {
     timeout: 15000
   },
@@ -27,7 +30,7 @@ export default defineConfig({
 
   // Configuración compartida
   use: {
-    baseURL: 'https://www.cruceros.co',
+    baseURL: env.BASE_URL,
     actionTimeout: 10000,
     navigationTimeout: 30000,
     trace: 'retain-on-failure',

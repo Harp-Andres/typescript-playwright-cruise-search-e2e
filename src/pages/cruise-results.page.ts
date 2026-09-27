@@ -1,12 +1,13 @@
-// src/flows/cruise-results.flow.ts
-import { Page, Locator } from '@playwright/test';
-import { CRUISE_SEARCH_STATIC_LOCATORS, cruiseSearchDynamicLocators } from '@/pages/locators/cruise-search.locators';
+import { Page } from '@playwright/test';
+import {
+  CRUISE_SEARCH_STATIC_LOCATORS,
+  cruiseSearchDynamicLocators,
+} from '@/pages/locators/cruise-search.locators';
+import { BasePage } from '@/pages/base/BasePage';
 
-export class CruiseResultsPage {
-  private page: Page;
-
+export class CruiseResultsPage extends BasePage {
   constructor(page: Page) {
-    this.page = page;
+    super(page);
   }
 
   async getCruceroText(nombre: string): Promise<string | null> {

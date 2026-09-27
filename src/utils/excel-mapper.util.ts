@@ -1,21 +1,22 @@
-// src/utils/excel-mapper.ts
 import { CruiseSearchResultData, CruiseSearchData } from '@/models/cruise-search.model';
 
-export function mapCruiseSearchData(row: any): CruiseSearchData {
+type ExcelRow = Record<string, string | number | boolean | undefined>;
+
+export function mapCruiseSearchData(row: ExcelRow): CruiseSearchData {
   return {
-    idTest: row['id_test'],
-    destino: row['destino'],
-    fechaId: row['fecha_id'],
-    fechaNom: row['fecha_nom'],
-    puerto: row['puerto'],
-    companias: row['companias'],
+    idTest: String(row['id_test']),
+    destino: String(row['destino']),
+    fechaId: String(row['fecha_id']),
+    fechaNom: String(row['fecha_nom']),
+    puerto: String(row['puerto']),
+    companias: String(row['companias']),
   };
 }
 
-export function mapCruiseSearchResultData(row: any): CruiseSearchResultData {
+export function mapCruiseSearchResultData(row: ExcelRow): CruiseSearchResultData {
   return {
-    idTest: row['id_test'],
-    cruceroEsperado: row['crucero_esperado'],
-    paisesEsperados: row['paises_esperados'],
+    idTest: String(row['id_test']),
+    cruceroEsperado: String(row['crucero_esperado']),
+    paisesEsperados: String(row['paises_esperados']),
   };
 }

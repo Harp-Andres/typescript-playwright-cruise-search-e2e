@@ -1,11 +1,13 @@
 {
-  "name": "prueba-buscar-cruseros",
+  "name": "typescript-playwright-cruise-search-e2e",
   "version": "1.0.0",
+  "description": "Domain-focused Playwright E2E sample: data-driven cruise search (complements qa-playwright-ai-framework).",
   "scripts": {
-    "test": "playwright test",
+    "test": "npm run test:unit",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
-    "test:typescript": "npx playwright test --config=playwright.config.ts",
     "type-check": "tsc --noEmit",
     "build": "tsc",
     "lint": "eslint . --ext .ts"
@@ -17,11 +19,11 @@
     "@typescript-eslint/parser": "^8.53.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@cucumber/cucumber": "^12.6.0",
-    "playwright-cucumber": "^1.0.15",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "zod": "^4.4.3"
   }
 }
